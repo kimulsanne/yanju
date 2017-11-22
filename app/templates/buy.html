@@ -1,0 +1,25 @@
+﻿<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<table>
+    <tr valign="top">
+    {% if not current_user.is_authenticated() %}
+     <h>用户未登录</h>
+    {% endif %}
+    {% if current_user.is_authenticated()%}
+     <h>欢迎，{{current_user.name}}</h>
+    {% endif %}
+</table>
+<hr>
+        <tr valign="top">
+        <td>书名:{{book.title}}</td><br/>
+        <td><img src="{{book.url}}"  height="200" width="200"></td><br/>
+        <td>相关信息:{{book.info}}</td><br/>
+        {% if not current_user.is_authenticated() %}
+         <h>登录后购买</h>
+        {% endif %}
+        {% if current_user.is_authenticated()%}
+         <h><a href="">购买</a></h>
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+﻿<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>商品资料</h1>
+  <form action = "" method = "post" enctype=multipart/form-data>
+      {{ form.hidden_tag() }}
+      <p>
+          书名:<br>
+          {{ form.title(size=40) }}<br>
+          {% for error in form.title.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p>
+          简介:<br>
+          {{ form.info(size=80) }}<br>
+          {% for error in form.info.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p>
+          书名图片(仅支持png格式和jpg格式的图片):<br>
+          {{ form.file }}<br>
+          {% for error in form.file.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+<h6>flashed message</h6>  
+          {% endfor %}<br>
+      </p>
+        <input type = "submit" value = 提交>
+  </form>
+{% endblock %}
