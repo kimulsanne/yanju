@@ -16,3 +16,4 @@ STRIPE_SECRET_KEY = 'foo'
 STRIPE_PUBLISHABLE_KEY = 'bar'''''
 SECURITY_PASSWORD_SALT = 'my_precious_two'
 
+1111
