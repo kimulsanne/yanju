@@ -37,7 +37,7 @@ def hello():
     except RedisError:
         visits = "<i>cannot connect to Redis, counter disabled</i>"
 
-    html = "<h3>Second commit Helllo {name}!</h3>" \
+    html = "<h3>First commit Helllo {name}!</h3>" \
         "<b>Hostname:</b> {hostname}<br />" \
         "<b>Visits:</b> {visits}"
 
